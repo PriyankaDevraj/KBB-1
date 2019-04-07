@@ -1,7 +1,7 @@
-
-<div >
-  <ul *ngFor='let car of cars'>
-    <span >{{car.id}}</span> {{car.name}}
-  </ul>
-</div>
-
+<h2>Car List</h2>
+<ul class="cars">
+  <li *ngFor='let car of cars' [class.selected]="car" (click)='onSelect(car)'>
+      <span>{{car.id}} {{car.name}} {{car.type}}</span>
+  </li>
+</ul>
+  <app-car-details [car]="selectedCar"></app-car-details>

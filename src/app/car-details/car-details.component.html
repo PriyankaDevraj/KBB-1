@@ -1,3 +1,7 @@
-<p>
-  car-details works!
-</p>
+<div *ngIf="car">
+  <h2> {{car.name | uppercase}} Details </h2>
+  <div><span>ID : {{car.id}}</span></div>
+  <div><span>Name : {{car.name}}</span></div>
+  <div><span>Type : {{car.type}}</span></div>
+</div>
+ 
