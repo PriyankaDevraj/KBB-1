@@ -43,6 +43,7 @@ export class CarService {
       return this.http.delete<Car>(url,httpOptions).pipe(catchError(this.handleError));
     }
     private handleError(error: HttpErrorResponse) {
+      
       if (error.error instanceof ErrorEvent) {
         // A client-side or network error occurred. Handle it accordingly.
         console.error('An error occurred:', error.error.message);
@@ -58,5 +59,5 @@ export class CarService {
       return throwError(
         'Something bad happened; please try again later.');
         
-    };
+    }
 }

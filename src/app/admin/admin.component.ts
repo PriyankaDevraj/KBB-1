@@ -30,11 +30,12 @@ export class AdminComponent implements OnInit {
       type:type
     };
     this.carService.addCar(this.newCar).subscribe();
+    alert("car saved successfully");
     }
   }
   //Update car details
   updateCartoDB(id:number,name:string,type:string):void{
-    alert(id);
+    
     if(isNaN(id) || isNullOrUndefined(name) || isNullOrUndefined(type) || name=="" || type==""){
       alert("Please Check whether data entered is correct");
     }else{
@@ -44,6 +45,7 @@ export class AdminComponent implements OnInit {
         type:type
       };
     this.carService.updateCar(this.newCar).subscribe();
+    alert("car updated successfully");
     }
   }
   //delete car details
@@ -52,6 +54,7 @@ export class AdminComponent implements OnInit {
       alert("Please enter a number in ID field");
     }else{
       this.carService.deleteCar(id).subscribe();
+      alert("car deleted successfully");
     }
       
   }
