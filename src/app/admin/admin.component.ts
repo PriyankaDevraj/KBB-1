@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../car';
 import { CarService } from '../car.service';
+import { isUndefined, isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-admin',
@@ -20,11 +21,10 @@ export class AdminComponent implements OnInit {
   }
   //save new car details
   saveCartoDB(id:number,name:string,type:string):void{
-    console.log("in car save");
-    if(isNaN(id)) {
-      alert("Please enter a number in ID field");
+    if(isNaN(id) || isNullOrUndefined(name) || isNullOrUndefined(type) || name=="" || type=="") {
+      alert("Please Check whether data entered is correct");
     }else{
-    this.newCar = {
+      this.newCar = {
       id: id,
       name:name,
       type:type
@@ -33,11 +33,17 @@ export class AdminComponent implements OnInit {
     }
   }
   //Update car details
-  updateCartoDB(car:Car):void{
-    if(isNaN(car.id)) {
-      alert("Please enter a number in ID field");
+  updateCartoDB(id:number,name:string,type:string):void{
+    alert(id);
+    if(isNaN(id) || isNullOrUndefined(name) || isNullOrUndefined(type) || name=="" || type==""){
+      alert("Please Check whether data entered is correct");
     }else{
-    this.carService.updateCar(this.selectedCar).subscribe();
+      this.newCar = {
+        id: id,
+        name:name,
+        type:type
+      };
+    this.carService.updateCar(this.newCar).subscribe();
     }
   }
   //delete car details
@@ -47,7 +53,7 @@ export class AdminComponent implements OnInit {
     }else{
       this.carService.deleteCar(id).subscribe();
     }
-      console.log("car deleted");
+      
   }
   onSelect(car:Car):void{
     this.selectedCar = car;
