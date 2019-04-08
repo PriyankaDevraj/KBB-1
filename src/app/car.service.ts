@@ -19,7 +19,7 @@ export class CarService {
   }
 
   //GetAll : To fetch all cars from db
-  getCar(id:string):Observable<Car>{
+  getCar(id:number):Observable<Car>{
     const url = this.baseURL+"/"+id;
     return this.http.get<Car>(url);
   }
@@ -33,7 +33,7 @@ export class CarService {
       console.log("Inside update "+url +"  ");
       return this.http.put<Car>(url,car,httpOptions);
     }
-    deleteCar(id:String):Observable<Car> {
+    deleteCar(id:number):Observable<Car> {
       const url = this.baseURL+"/"+id; 
       console.log("Inside delete"+url);
       return this.http.delete<Car>(url,httpOptions);

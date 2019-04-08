@@ -9,7 +9,7 @@ import { CarService } from '../car.service';
 })
 export class CarsComponent implements OnInit {
 
-  car:Car = { id:'1' , name:'Subaru' ,type:'SUV' };
+  car:Car = { id:15 , name:'Subaru' ,type:'SUV' };
   cars:Car[];
   selectedCar:Car;
 

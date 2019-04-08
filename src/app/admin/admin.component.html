@@ -1,5 +1,5 @@
 <div>
-  <label>Edit Car Details
+  <br><h2>Edit Car Details</h2><br>
     <p>ID   <input #box1 [(ngModel)]="selectedCar.id" placeholder="id" (keyup.enter)="onEnter(box1.value)"/></p>
     <p>Name <input #box2 [(ngModel)]="selectedCar.name" placeholder="name" (keyup.enter)="onEnter(box2.value)"/></p>
     <p>Type <input #box3 [(ngModel)]="selectedCar.type" placeholder="type" (keyup.enter)="onEnter(box3.value)"/></p>
@@ -7,9 +7,9 @@
     <button type="update" placeholder="update" (click)='updateCartoDB(box1.value,box2.value,box3.value)'>UPDATE</button>
     <button type="delete" placeholder="delete" (click)='deleteCarinDB(box1.value)'>DELETE</button>
     <button type="reset" placeholder="reset" (click)='clearAll()'>RESET</button>
-  </label>
-</div>
-<label>Select Car To Edit</label><br>
+  
+</div><br>
+<h2>Select Car To Edit</h2><br>
 <button type="reset" placeholder="reset" (click)='reload()'>REFRESH</button>
 <ul class="cars">
   <li *ngFor='let car of cars' [class.selected]="car" (click)='onSelect(car)'>
