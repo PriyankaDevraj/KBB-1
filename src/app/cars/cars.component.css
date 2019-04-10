@@ -46,3 +46,23 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
+  .column {
+    float: left;
+    width: 50%;
+    align-content: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+
+  }

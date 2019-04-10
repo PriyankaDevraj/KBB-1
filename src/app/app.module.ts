@@ -9,11 +9,14 @@ import { KbbHomeComponent } from './kbb-home/kbb-home.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { AdminComponent } from './admin/admin.component';
+import { NewCarComponent } from './new-car/new-car.component';
 
 const appRoutes:Routes = [
   { path:'home', component:KbbHomeComponent },
   { path:'cars', component:CarsComponent },
   { path:'admin', component:AdminComponent },
+  { path:'carValues', component:NewCarComponent },
+  { path:'carForSale', component:NewCarComponent },
   { path: '',
   redirectTo: '/home',
   pathMatch: 'full'
@@ -26,7 +29,8 @@ const appRoutes:Routes = [
     KbbHomeComponent,
     CarsComponent,
     CarDetailsComponent,
-    AdminComponent
+    AdminComponent,
+    NewCarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

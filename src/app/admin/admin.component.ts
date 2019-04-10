@@ -32,6 +32,7 @@ export class AdminComponent implements OnInit {
     this.carService.addCar(this.newCar).subscribe();
     alert("car saved successfully");
     }
+    this.clearAll();
   }
   //Update car details
   updateCartoDB(id:number,name:string,type:string):void{
@@ -47,6 +48,7 @@ export class AdminComponent implements OnInit {
     this.carService.updateCar(this.newCar).subscribe();
     alert("car updated successfully");
     }
+    this.clearAll();
   }
   //delete car details
   deleteCarinDB(id:number):void{
@@ -56,7 +58,7 @@ export class AdminComponent implements OnInit {
       this.carService.deleteCar(id).subscribe();
       alert("car deleted successfully");
     }
-      
+      this.clearAll();
   }
   onSelect(car:Car):void{
     this.selectedCar = car;

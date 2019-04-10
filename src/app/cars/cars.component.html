@@ -1,7 +1,11 @@
+<div class="column" col align="center">
 <h2>Car List</h2>
-<ul class="cars">
+<ul class="cars" col align="center">
   <li *ngFor='let car of cars' [class.selected]="car" (click)='onSelect(car)'>
       <span>{{car.id}} {{car.name}} {{car.type}}</span>
   </li>
 </ul>
+</div>
+<div class="column">
   <app-car-details [car]="selectedCar"></app-car-details>
+</div>

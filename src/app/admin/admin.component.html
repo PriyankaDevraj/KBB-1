@@ -1,4 +1,4 @@
-<div>
+<div  class="column" col align="center">
   <br><h2>Edit Car Details</h2><br>
     <p>ID   <input #box1 [(ngModel)]="selectedCar.id" placeholder="id" (keyup.enter)="onEnter(box1.value)"/></p>
     <p>Name <input #box2 [(ngModel)]="selectedCar.name" placeholder="name" (keyup.enter)="onEnter(box2.value)"/></p>
@@ -9,6 +9,7 @@
     <button type="reset" placeholder="reset" (click)='clearAll()'>RESET</button>
   
 </div><br>
+<div class="column" col align="center">
 <h2>Select Car To Edit</h2><br>
 <button type="reset" placeholder="reset" (click)='reload()'>REFRESH</button>
 <ul class="cars">
@@ -16,3 +17,4 @@
       <span>{{car.id}} {{car.name}} {{car.type}}</span>
   </li>
 </ul>
+</div>

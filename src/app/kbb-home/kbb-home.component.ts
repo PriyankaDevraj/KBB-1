@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kbb-home.component.css']
 })
 export class KbbHomeComponent implements OnInit {
-
+  itemImageUrl = 'assets/car_image.jpg';
   constructor() { }
 
   ngOnInit() {
